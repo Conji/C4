@@ -1,0 +1,15 @@
+﻿(40)
+name = Moderator
+kick
+
+(60) > 40
+name = Admin
+ban
+unban
+
+(80) > 60
+name = Senior Admin
+setadmin
+
+(100) > 80
+name = Head Admin

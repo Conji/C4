@@ -1,0 +1,10 @@
+﻿(40)
+eas.canPlayerKick
+
+(60) > 40
+eas.canPlayerBan
+eas.canPlayerUnban
+
+(80) > 60
+
+(100) > 80

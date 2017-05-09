@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{97506E0F-C137-4BDB-BAAA-5AC8F05E568A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CFour</RootNamespace>
+    <AssemblyName>CFour</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="InfinityScript">
+      <HintPath>lib\InfinityScript.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\OldWelt\lib\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminGroup.cs" />
+    <Compile Include="Api\IDataManager.cs" />
+    <Compile Include="Api\IDataPersistence.cs" />
+    <Compile Include="Api\IDataReport.cs" />
+    <Compile Include="BanManager.cs" />
+    <Compile Include="CFour.Commands.cs" />
+    <Compile Include="CFour.Constants.cs" />
+    <Compile Include="CFour.cs" />
+    <Compile Include="CFourPlayer.cs" />
+    <Compile Include="CommandArgument.cs" />
+    <Compile Include="Eas\EasManager.cs" />
+    <Compile Include="Eas\EasPersistence.cs" />
+    <Compile Include="Eas\EasReport.cs" />
+    <Compile Include="Events\PlayerBannedEventArgs.cs" />
+    <Compile Include="Events\PlayerKickedEventArgs.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="MemoryReader.cs" />
+    <Compile Include="PersistenceManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sec\Parser\SecReader.cs" />
+    <Compile Include="Sec\Parser\SecWriter.cs" />
+    <Compile Include="Sec\SecBool.cs" />
+    <Compile Include="Sec\SecFile.cs" />
+    <Compile Include="Sec\SecFloat.cs" />
+    <Compile Include="Sec\SecInt.cs" />
+    <Compile Include="Sec\SecString.cs" />
+    <Compile Include="Sec\SecTable.cs" />
+    <Compile Include="Sec\SecToken.cs" />
+    <Compile Include="TaskScheduler.cs" />
+    <Compile Include="Xlr\XlrManager.cs" />
+    <Compile Include="Xlr\XlrPersistence.cs" />
+    <Compile Include="Xlr\XlrReport.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <AdditionalFiles Include="Resources\permissions.sec">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AdditionalFiles>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

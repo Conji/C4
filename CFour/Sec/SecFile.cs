@@ -1,0 +1,62 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using Sec.Parser;
+
+namespace Sec
+{
+    public sealed class SecFile : IEnumerable<SecTable>
+    {
+        private readonly string _location;
+        private const string SEC_EXT = ".sec";
+        internal Dictionary<string, SecTable> Tables; 
+
+        public SecFile(string location)
+        {
+            _location = location + SEC_EXT;
+            Tables = new Dictionary<string, SecTable>();
+        }
+
+        public SecFile() : this("config")
+        {
+            
+        }
+
+        public bool HasTables => true;
+
+        public void ReadTables()
+        {
+            Tables = SecReader.GetTables(File.ReadAllLines(_location));
+        }
+
+        public SecTable this[string tableName] => Tables[tableName];
+
+        public static SecFile Open(string location)
+        {
+            return new SecFile(location) { Tables = SecReader.GetTables(File.ReadAllLines(location + SEC_EXT))};
+        }
+
+        public override string ToString()
+        {
+            var builder = new StringBuilder();
+            foreach (var line in SecWriter.Convert(this))
+            {
+                builder.AppendLine(line);
+            }
+            return builder.ToString();
+        }
+
+        public IEnumerator<SecTable> GetEnumerator()
+        {
+            return Tables.Values.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return Tables.Values.GetEnumerator();
+        }
+    }
+}

@@ -1,0 +1,10 @@
+c:\users\brian\documents\visual studio 2017\Projects\CFour\CFour\obj\Debug\CFour.csprojResolveAssemblyReference.cache
+c:\users\brian\documents\visual studio 2017\Projects\CFour\CFour\bin\Debug\CFour.dll
+c:\users\brian\documents\visual studio 2017\Projects\CFour\CFour\bin\Debug\CFour.pdb
+c:\users\brian\documents\visual studio 2017\Projects\CFour\CFour\bin\Debug\InfinityScript.dll
+c:\users\brian\documents\visual studio 2017\Projects\CFour\CFour\bin\Debug\Newtonsoft.Json.dll
+c:\users\brian\documents\visual studio 2017\Projects\CFour\CFour\bin\Debug\Sec.dll
+c:\users\brian\documents\visual studio 2017\Projects\CFour\CFour\bin\Debug\System.ValueTuple.dll
+c:\users\brian\documents\visual studio 2017\Projects\CFour\CFour\bin\Debug\Newtonsoft.Json.xml
+c:\users\brian\documents\visual studio 2017\Projects\CFour\CFour\obj\Debug\CFour.dll
+c:\users\brian\documents\visual studio 2017\Projects\CFour\CFour\obj\Debug\CFour.pdb
